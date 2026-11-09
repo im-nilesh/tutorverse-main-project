@@ -5,12 +5,12 @@ import TutorsPage from "../pages/Tutors";
 import NotFound from "../pages/NotFound";
 
 export default function AppRoutes() {
-  const [pathname, setPathname] = useState(window.location.pathname);
+  const [pathname, setPathname] = useState(window.location.pathname.replace(/\/+$/, "") || "/");
   const [notice, setNotice] = useState("");
   const timer = useRef();
 
   useEffect(() => {
-    const onPopState = () => setPathname(window.location.pathname);
+    const onPopState = () => setPathname(window.location.pathname.replace(/\/+$/, "") || "/");
     window.addEventListener("popstate", onPopState);
     return () => {
       window.removeEventListener("popstate", onPopState);
@@ -19,11 +19,15 @@ export default function AppRoutes() {
   }, []);
 
   const navigate = useCallback((path) => {
-    if (path === window.location.pathname) return;
-    window.history.pushState({}, "", path);
-    setPathname(window.location.pathname);
+    const nextPath = path.replace(/\/+$/, "") || "/";
+    if (nextPath === pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    window.history.pushState({}, "", nextPath);
+    setPathname(nextPath);
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
+  }, [pathname]);
 
   const notify = useCallback((message) => {
     setNotice(message);
@@ -36,5 +40,5 @@ export default function AppRoutes() {
   else if (pathname === "/tutors") page = <TutorsPage notify={notify} />;
   else page = <NotFound />;
 
-  return <SiteLayout pathname={pathname} navigate={navigate} notify={notify}>{page}</SiteLayout>;
+  return <SiteLayout pathname={pathname} navigate={navigate} notify={notify} notice={notice}>{page}</SiteLayout>;
 }
