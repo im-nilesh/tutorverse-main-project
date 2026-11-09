@@ -1,6 +1,7 @@
 import { benefits } from "../../data/content";
-import Tilt from "../../ui/Tilt";
-import Reveal from "../../ui/Reveal";
+
+import Tilt from "../ui/Tilt";
+import Reveal from "../ui/Reveal";
 
 export default function Benefits() {
   return (

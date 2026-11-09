@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 import Hero from "../components/home/Hero";
@@ -23,21 +24,33 @@ export default function Home({ notify }) {
     <>
       <Hero />
 
-      <Benefits />
+      <div className="section-wrap">
+        <Benefits />
+      </div>
 
-      <HowItWorks />
+      <div className="section-wrap">
+        <HowItWorks />
+      </div>
 
-      <Tutors
-        active={active}
-        setActive={setActive}
-        notify={notify}
-      />
+      <div className="section-wrap">
+        <Tutors
+          active={active}
+          setActive={setActive}
+          notify={notify}
+        />
+      </div>
 
-      <Subjects pick={pick} />
+      <div className="section-wrap">
+        <Subjects pick={pick} />
+      </div>
 
-      <Testimonials />
+      <div className="section-wrap">
+        <Testimonials />
+      </div>
 
-      <Cta />
+      <div className="section-wrap">
+        <Cta />
+      </div>
     </>
   );
 }

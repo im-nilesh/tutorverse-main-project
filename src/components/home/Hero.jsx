@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import * as Icons from "lucide-react";
 import { ArrowRight, BadgeCheck, BookOpen, CalendarDays, GraduationCap, Layers, Search, Sparkles, Video } from "lucide-react";
 import { stats } from "../../data/content";
 
@@ -26,7 +25,7 @@ export default function Hero() {
           <a className="btn btn-glass btn-hero" href="#for-tutors"><GraduationCap size={20} /> Become a Tutor</a>
         </div>
         <div className="stats">
-          {stats.map(([ic, n, l]) => { const I = Icons[ic]; return <div key={l}><I /><strong>{n}</strong><span>{l}</span></div>; })}
+          {stats.map(([Icon, n, l]) => <div key={l}><Icon /><strong>{n}</strong><span>{l}</span></div>)}
         </div>
       </div>
       <div className="hero-art" onMouseMove={move} onMouseLeave={() => tilt(0, 0)} aria-label="3D learning scene">

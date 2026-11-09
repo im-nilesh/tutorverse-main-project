@@ -1,7 +1,7 @@
 import { quotes } from "../../data/content";
-import Reveal from "../../ui/Reveal";
-import SectionTitle from "../../ui/SectionTitle";
-import Tilt from "../../ui/Tilt";
+import Reveal from "../ui/Reveal";
+import SectionTitle from "../ui/SectionTitle";
+import Tilt from "../ui/Tilt";
 
 export default function Testimonials() {
   return (

@@ -1,12 +1,33 @@
+
+import { Link } from "react-router-dom";
 import { BookOpen } from "lucide-react";
-import { nav } from "../../data/content";
 
 export default function Footer() {
   return (
     <footer className="footer section-wrap">
-      <a className="brand" href="#home"><span className="brand-mark"><BookOpen size={24} /></span><span>Tutor<span>Verse</span></span></a>
-      <div className="footer-links">{nav.map(([l, h]) => <a key={l} href={h}>{l}</a>)}</div>
-      <span className="copyright">© 2026 TutorVerse. Learn without limits.</span>
+
+      <Link className="brand" to="/">
+        <span className="brand-mark">
+          <BookOpen size={24} />
+        </span>
+
+        <span>
+          Tutor<span>Verse</span>
+        </span>
+      </Link>
+
+      <div className="footer-links">
+        <Link to="/">Home</Link>
+        <Link to="/tutors">Find Tutors</Link>
+        <Link to="/#for-tutors">For Tutors</Link>
+        <Link to="/#how-it-works">How It Works</Link>
+        <Link to="/#testimonials">Testimonials</Link>
+      </div>
+
+      <span className="copyright">
+        © 2026 TutorVerse. Learn without limits.
+      </span>
+
     </footer>
   );
 }

@@ -1,6 +1,4 @@
-import { ShieldCheck, Zap, Laptop, CalendarDays } from "lucide-react";
-
-export const nav = [["Home", "#home"], ["Find Tutors", "#tutors"], ["For Tutors", "#for-tutors"], ["How It Works", "#how-it-works"], ["Testimonials", "#testimonials"]];
+import { BookOpen, CalendarDays, Laptop, ShieldCheck, Star, Users, Zap } from "lucide-react";
 
 export const benefits = [
   { icon: ShieldCheck, title: "Verified Tutors", text: "Background-checked & trusted" },
@@ -19,7 +17,7 @@ export const tutors = [
   { name: "Aditya Shah", subject: "Chemistry · Biology", tags: ["Science", "Chemistry", "Biology"], rating: "4.8", reviews: "102", price: "₹700", exp: "5 years", mode: "Online & Home", initials: "AS", color: "amber" },
 ];
 
-export const stats = [["Users", "10K+", "Verified Tutors"], ["BookOpen", "100+", "Subjects"], ["Users", "50K+", "Students"], ["Star", "4.9★", "Average Rating"]];
+export const stats = [[Users, "10K+", "Verified Tutors"], [BookOpen, "100+", "Subjects"], [Users, "50K+", "Students"], [Star, "4.9★", "Average Rating"]];
 
 export const quotes = [
   { initials: "KS", color: "lavender", text: "I found a great tutor for my son's 10th grade Maths. The profile details and reviews really helped me choose the right tutor.", by: "Kavita S.", role: "Parent" },

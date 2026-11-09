@@ -1,4 +1,4 @@
-import useReveal from "../hooks/useReveal";
+import useReveal from "../../hooks/useReveal";
 
 export default function Reveal({ className = "", children, ...rest }) {
   const ref = useReveal();
