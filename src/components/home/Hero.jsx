@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import * as Icons from "lucide-react";
 import { ArrowRight, BadgeCheck, BookOpen, CalendarDays, GraduationCap, Layers, Search, Sparkles, Video } from "lucide-react";
-import { stats } from "../data/content";
+import { stats } from "../../data/content";
 
 const floaters = [
   ["card-live", Video, "Live Classes", 70], ["card-schedule", CalendarDays, "Flexible Schedules", 110],

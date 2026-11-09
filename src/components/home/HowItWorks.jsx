@@ -1,7 +1,7 @@
 import { GraduationCap, Users } from "lucide-react";
-import { studentSteps, tutorSteps } from "../data/content";
-import Reveal from "./Reveal";
-import Tilt from "./Tilt";
+import { studentSteps, tutorSteps } from "../../data/content";
+import Reveal from "../../ui/Reveal";
+import Tilt from "../../ui/Tilt";
 
 function StepCard({ id, icon: Icon, title, steps }) {
   return (

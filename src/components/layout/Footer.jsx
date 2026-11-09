@@ -1,5 +1,5 @@
 import { BookOpen } from "lucide-react";
-import { nav } from "../data/content";
+import { nav } from "../../data/content";
 
 export default function Footer() {
   return (

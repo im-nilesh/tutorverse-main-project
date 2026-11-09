@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, BookOpen, Menu, X } from "lucide-react";
-import { nav } from "../data/content";
+import { nav } from "../../data/content";
 
 export default function Header({ notify }) {
   const [open, setOpen] = useState(false);

@@ -1,5 +1,5 @@
 import { ArrowRight, GraduationCap } from "lucide-react";
-import Reveal from "./Reveal";
+import Reveal from "../../ui/Reveal";
 
 export default function Cta() {
   return (

@@ -1,7 +1,7 @@
-import { subjects, tutors } from "../data/content";
-import Reveal from "./Reveal";
-import SectionTitle from "./SectionTitle";
-import TutorCard from "./TutorCard";
+import { subjects, tutors } from "../../data/content";
+import Reveal from "../../ui/Reveal";
+import SectionTitle from "../../ui/SectionTitle";
+import TutorCard from "../../ui/TutorCard";
 
 export default function Tutors({ active, setActive, notify }) {
   const list = tutors.filter((t) => active === "All Subjects" || t.tags.includes(active));

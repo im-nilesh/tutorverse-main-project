@@ -1,14 +1,14 @@
 import { useRef, useState } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Benefits from "./components/Benefits";
-import HowItWorks from "./components/HowItWorks";
-import Tutors from "./components/Tutors";
-import Subjects from "./components/Subjects";
-import Testimonials from "./components/Testimonials";
-import Cta from "./components/Cta";
-import Footer from "./components/Footer";
-import Toast from "./components/Toast";
+import Header from "./components/layout/Header";
+import Hero from "./components/home/Hero";
+import Benefits from "./components/home/Benefits";
+import HowItWorks from "./components/home/HowItWorks";
+import Tutors from "./components/home/Tutors";
+import Subjects from "./components/home/Subjects";
+import Testimonials from "./components/home/Testimonials";
+import Cta from "./components/home/Cta";
+import Footer from "./components/layout/Footer";
+import Toast from "./components/common/Toast";
 
 export default function App() {
   const [active, setActive] = useState("All Subjects");
