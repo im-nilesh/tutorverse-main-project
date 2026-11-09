@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { useOutletContext } from "react-router-dom";
 import { Search, SlidersHorizontal, Sparkles } from "lucide-react";
 import { subjects, tutors } from "../data/content";
 import SectionTitle from "../components/SectionTitle";
@@ -7,16 +6,16 @@ import TutorCard from "../components/TutorCard";
 import Reveal from "../components/Reveal";
 import Tilt from "../components/Tilt";
 
-export default function TutorsPage() {
+export default function TutorsPage({ notify }) {
   const [active, setActive] = useState("All Subjects");
   const [query, setQuery] = useState("");
-  const { notify } = useOutletContext();
   const visible = useMemo(() => tutors.filter((t) => {
     const matchesSubject = active === "All Subjects" || t.tags.includes(active);
     const term = query.trim().toLowerCase();
     const matchesQuery = !term || [t.name, t.subject, t.mode].join(" ").toLowerCase().includes(term);
     return matchesSubject && matchesQuery;
   }), [active, query]);
+
   return <div className="section-wrap page-wrap">
     <Reveal className="page-intro">
       <span className="eyebrow"><Sparkles size={14} /> FIND YOUR MENTOR</span>
@@ -26,11 +25,11 @@ export default function TutorsPage() {
     <Reveal className="tutors-section">
       <SectionTitle kicker="EXPLORE OUR COMMUNITY" title="Meet our" accent="Tutors" text="Browse tutor profiles and narrow your search by subject." />
       <div className="tutor-toolbar">
-        <label className="tutor-search"><Search size={18}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search tutor, subject or class mode" /></label>
+        <label className="tutor-search"><Search size={18}/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search tutor, subject or class mode" /></label>
         <span className="toolbar-count"><SlidersHorizontal size={16}/> {visible.length} tutors</span>
       </div>
-      <div className="subject-filter">{["All Subjects", ...subjects].map(s=><button key={s} className={active===s?"filter active":"filter"} onClick={()=>setActive(s)}>{s}</button>)}</div>
-      <div className="tutor-grid">{visible.length ? visible.map(t=><TutorCard key={t.name} t={t} notify={notify}/>) : <p className="empty">No tutors match your search. Try another name or subject.</p>}</div>
+      <div className="subject-filter">{["All Subjects", ...subjects].map((subject) => <button key={subject} className={active === subject ? "filter active" : "filter"} onClick={() => setActive(subject)}>{subject}</button>)}</div>
+      <div className="tutor-grid">{visible.length ? visible.map((tutor) => <TutorCard key={tutor.name} t={tutor} notify={notify}/> ) : <p className="empty">No tutors match your search. Try another name or subject.</p>}</div>
     </Reveal>
     <Reveal className="tutor-promo">
       <Tilt className="promo-cube" max={14}><div className="cube"><b/><b/><b/><b/><b/><b/></div></Tilt>
